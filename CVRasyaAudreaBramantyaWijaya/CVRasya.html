@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV – [Nama Anda]</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111111;
+      --gray-dark: #333333;
+      --gray-mid: #666666;
+      --gray-light: #aaaaaa;
+      --rule: #dddddd;
+      --bg: #ffffff;
+      --page-w: 794px; /* A4 width at 96dpi */
+    }
+
+    body {
+      background: #f0ece8;
+      font-family: 'EB Garamond', Georgia, serif;
+      color: var(--black);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 16px;
+    }
+
+    .page {
+      background: var(--bg);
+      width: var(--page-w);
+      min-height: 1123px; /* A4 height at 96dpi */
+      padding: 64px 72px;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.12);
+      position: relative;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding-bottom: 28px;
+      border-bottom: 2px solid var(--black);
+      margin-bottom: 36px;
+    }
+
+    .header-photo {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--rule);
+      background: #e8e8e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .header-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .photo-placeholder {
+      font-size: 11px;
+      font-family: 'DM Mono', monospace;
+      color: var(--gray-light);
+      text-align: center;
+      line-height: 1.4;
+      padding: 8px;
+    }
+
+    .header-left h1 {
+      font-size: 42px;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .header-left .role {
+      font-size: 14px;
+      font-family: 'DM Mono', monospace;
+      color: var(--gray-mid);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--gray-dark);
+      font-family: 'DM Mono', monospace;
+    }
+
+    .header-right a {
+      color: var(--gray-dark);
+      text-decoration: none;
+    }
+
+    /* ── LAYOUT ── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0 48px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      display: contents;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+      padding-top: 4px;
+      text-align: right;
+    }
+
+    .section-content {
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 32px;
+    }
+
+    .section:last-child .section-content {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    /* ── ABOUT ── */
+    .about-text {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: var(--gray-dark);
+      font-style: italic;
+    }
+
+    /* ── EXPERIENCE ── */
+    .entry {
+      margin-bottom: 24px;
+    }
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .entry-title {
+      font-size: 15.5px;
+      font-weight: 600;
+    }
+
+    .entry-period {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--gray-light);
+      white-space: nowrap;
+    }
+
+    .entry-company {
+      font-size: 13.5px;
+      color: var(--gray-mid);
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+
+    .entry-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--gray-dark);
+      list-style: none;
+      padding: 0;
+    }
+
+    .entry-desc li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 3px;
+    }
+    .entry-desc li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gray-light);
+    }
+
+    /* ── SKILLS ── */
+    .skills-group {
+      margin-bottom: 14px;
+    }
+    .skills-group:last-child { margin-bottom: 0; }
+
+    .skills-cat {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-light);
+      margin-bottom: 4px;
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 12.5px;
+      color: var(--gray-dark);
+      border: 1px solid var(--rule);
+      padding: 2px 10px;
+      border-radius: 2px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .edu-degree {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .edu-school {
+      font-size: 13.5px;
+      color: var(--gray-mid);
+      font-style: italic;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══ HEADER ══ -->
+  <header class="header">
+
+    <!-- FOTO PROFIL: ganti src="foto.jpg" dengan nama file foto kamu -->
+    <!-- Letakkan file foto di folder yang sama dengan file HTML ini -->
+    <div class="header-photo">
+      <img src="IMG_3863.JPG" alt="Foto Profil"
+           onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;photo-placeholder&quot;>Foto<br>Profil</div>'" />
+    </div>
+
+    <div class="header-left">
+      <h1>[Nama Lengkap]</h1>
+      <p class="role">[Posisi / Profesi Anda]</p>
+    </div>
+    <div class="header-right">
+      <div>[kota], Indonesia</div>
+      <div><a href="/cdn-cgi/l/email-protection#a1c4ccc0c8cde1c0cfc5c08fc2cecc"><span class="__cf_email__" data-cfemail="dfbab2beb6b39fbeb1bbbef1bcb0b2">[email&#160;protected]</span></a></div>
+      <div><a href="tel:+6281234567890">+62 812 3456 7890</a></div>
+      <div><a href="https://linkedin.com/in/username" target="_blank">linkedin.com/in/username</a></div>
+      <div><a href="https://github.com/username" target="_blank">github.com/username</a></div>
+    </div>
+  </header>
+
+  <!-- ══ BODY GRID ══ -->
+  <div class="body-grid">
+
+    <!-- ── PROFIL ── -->
+    <div class="section">
+      <div class="section-label">Profil</div>
+      <div class="section-content">
+        <p class="about-text">
+          Seorang professional yang berorientasi pada solusi dengan kombinasi
+          kemampuan analisis kritis dan adaptabillitas yang tinggi. Memiliki rasa 
+          ingin tahu yang besar dalam membedah masalah kompleks serta mampu 
+          menyederhanakannya menjadi langkah kerja yang sistematis. Komunikator yang 
+          efektif dan inklusif, mahir menjembatani ide-ide strategis dengan eksekusi
+          yang praktis demi mencapai target yang efisien dan berkualitas. 
+        </p>
+      </div>
+    </div>
+
+    <!-- ── PENGALAMAN ── -->
+    <div class="section">
+      <div class="section-label">Pengalaman</div>
+      <div class="section-content">
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">[Jabatan / Posisi]</span>
+            <span class="entry-period">Jan 2023 — Sekarang</span>
+          </div>
+          <div class="entry-company">[Nama Perusahaan] · [Kota / Remote]</div>
+          <ul class="entry-desc">
+            <li>Deskripsikan pencapaian utama dengan angka dan dampak nyata.</li>
+            <li>Gunakan kata kerja aktif: memimpin, membangun, meningkatkan, mengoptimalkan.</li>
+            <li>Satu baris per poin, fokus pada hasil bukan sekadar tugas.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">[Jabatan / Posisi]</span>
+            <span class="entry-period">Jun 2021 — Des 2022</span>
+          </div>
+          <div class="entry-company">[Nama Perusahaan] · [Kota]</div>
+          <ul class="entry-desc">
+            <li>Pencapaian atau tanggung jawab utama di posisi ini.</li>
+            <li>Pencapaian atau tanggung jawab kedua yang relevan.</li>
+            <li>Tambahkan data kuantitatif bila memungkinkan (mis. 30% peningkatan).</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">[Jabatan / Posisi]</span>
+            <span class="entry-period">Agu 2019 — Mei 2021</span>
+          </div>
+          <div class="entry-company">[Nama Perusahaan] · [Kota]</div>
+          <ul class="entry-desc">
+            <li>Pencapaian atau tanggung jawab utama.</li>
+            <li>Pencapaian atau tanggung jawab kedua.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── PENDIDIKAN ── -->
+    <div class="section">
+      <div class="section-label">Pendidikan</div>
+      <div class="section-content">
+
+        <div class="entry">
+          <div class="edu-header">
+            <span class="edu-degree">[Gelar] – [Jurusan]</span>
+            <span class="entry-period">2015 — 2019</span>
+          </div>
+          <div class="edu-school">[Nama Universitas] · [Kota]</div>
+        </div>
+
+        <div class="entry" style="margin-top:16px;">
+          <div class="edu-header">
+            <span class="edu-degree">[Sertifikasi / Kursus Relevan]</span>
+            <span class="entry-period">2022</span>
+          </div>
+          <div class="edu-school">[Lembaga Penyelenggara]</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── KEAHLIAN ── -->
+    <div class="section">
+      <div class="section-label">Keahlian</div>
+      <div class="section-content">
+
+        <div class="skills-group">
+          <div class="skills-cat">Teknis</div>
+          <div class="skills-tags">
+            <span class="tag">Keahlian 1</span>
+            <span class="tag">Keahlian 2</span>
+            <span class="tag">Keahlian 3</span>
+            <span class="tag">Keahlian 4</span>
+            <span class="tag">Keahlian 5</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-cat">Tools & Platform</div>
+          <div class="skills-tags">
+            <span class="tag">Tool 1</span>
+            <span class="tag">Tool 2</span>
+            <span class="tag">Tool 3</span>
+            <span class="tag">Tool 4</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-cat">Bahasa</div>
+          <div class="skills-tags">
+            <span class="tag">Indonesia – Native</span>
+            <span class="tag">English – Professional</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── PROYEK (opsional) ── -->
+    <div class="section">
+      <div class="section-label">Proyek</div>
+      <div class="section-content">
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">[Nama Proyek]</span>
+            <span class="entry-period">2023</span>
+          </div>
+          <div class="entry-company">[Link / Teknologi yang digunakan]</div>
+          <ul class="entry-desc">
+            <li>Deskripsi singkat proyek dan peran Anda di dalamnya.</li>
+            <li>Dampak atau hasil yang dicapai dari proyek ini.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">[Nama Proyek]</span>
+            <span class="entry-period">2022</span>
+          </div>
+          <div class="entry-company">[Link / Teknologi yang digunakan]</div>
+          <ul class="entry-desc">
+            <li>Deskripsi singkat proyek dan dampaknya.</l

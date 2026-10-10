@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.login-box {
+    width: 400px;
+    margin: 100px auto;
+    padding: 25px;
+    border: 1px solid #ccc;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.login-box h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 220px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="checkbox"] {
+    margin-left: 100px;
+}
+
+button {
+    margin-left: 100px;
+    padding: 6px 15px;
+    border: 1px solid #ccc;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+    <h2>Login</h2>
+    
+    <div class="form-group">
+        <label>Username:</label>
+        <input type="text" placeholder="petanikode">
+    </div>
+    
+    <div class="form-group">
+        <label>Password:</label>
+        <input type="password">
+    </div>
+    
+    <div class="form-group">
+        <input type="checkbox"> Remember me
+    </div>
+    
+    <div class="form-group">
+        <button>Login</button>
+    </div>
+</div>
+
+</body>
+</html>

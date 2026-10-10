@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-10",
+  "sources": [
+    {
+      "repository": "TUGAS_ETS_PWEB",
+      "url": "https://github.com/rasyaaudreabramantyawijaya/TUGAS_ETS_PWEB",
+      "default_branch": "main",
+      "commit": "308e2b24652c5b400bef31a5dbd640840957dddf",
+      "tree": "e27235511581116ce0a8157850603ddcbbddaf75"
+    },
+    {
+      "repository": "Tugas_PWeb_5054241034",
+      "url": "https://github.com/rasyaaudreabramantyawijaya/Tugas_PWeb_5054241034",
+      "default_branch": "main",
+      "commit": "058af7c821ecd450eca04c501f0296dbefe4c3ff",
+      "tree": "e307ceec7174bdf896f5cc9a2063bd544b456381"
+    },
+    {
+      "repository": "Login-Tabel",
+      "url": "https://github.com/rasyaaudreabramantyawijaya/Login-Tabel",
+      "default_branch": "main",
+      "commit": "90d39e5890cb4ffdb8756ba7797da0b915376939",
+      "tree": "3e0ec02df2911a0afa2c6e44785664ce81a74ac6"
+    },
+    {
+      "repository": "CVRasyaAudreaBramantyaWijaya",
+      "url": "https://github.com/rasyaaudreabramantyawijaya/CVRasyaAudreaBramantyaWijaya",
+      "default_branch": "main",
+      "commit": "4e9b215be70d620e54ac90552a1ecdb0141d7e4c",
+      "tree": "5acf682d5b9d5471239c367945d518b6098a1307"
+    }
+  ]
+}
